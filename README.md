@@ -1,1 +1,2 @@
-# quizdroid-basic
+# quizdroid
+
