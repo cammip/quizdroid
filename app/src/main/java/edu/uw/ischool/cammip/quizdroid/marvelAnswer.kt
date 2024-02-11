@@ -1,16 +1,15 @@
 package edu.uw.ischool.cammip.quizdroid
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.content.Intent
 
-class mathAnswer : AppCompatActivity() {
-
+class marvelAnswer : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_math_answer)
+        setContentView(R.layout.activity_marvel_answer)
 
         val btn: Button = findViewById(R.id.finish)
 
@@ -23,6 +22,5 @@ class mathAnswer : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-
     }
 }

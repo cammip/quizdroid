@@ -32,6 +32,12 @@ class mathQuestion : AppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
+
     private fun startMathAnswer(selectedAnswer: String) {
         val intent = Intent(this, mathAnswer::class.java)
         // Pass the selected answer as an extra with the intent

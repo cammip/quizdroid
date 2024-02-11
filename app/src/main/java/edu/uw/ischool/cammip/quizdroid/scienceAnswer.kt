@@ -6,11 +6,10 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 
-class mathAnswer : AppCompatActivity() {
-
+class scienceAnswer : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_math_answer)
+        setContentView(R.layout.activity_science_answer)
 
         val btn: Button = findViewById(R.id.finish)
 
@@ -23,6 +22,5 @@ class mathAnswer : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-
     }
 }
