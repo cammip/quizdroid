@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.RadioButton
+import android.widget.TextView
 
 class scienceQuestion : AppCompatActivity() {
     private lateinit var subButton: Button
@@ -12,15 +13,28 @@ class scienceQuestion : AppCompatActivity() {
     private lateinit var radio2: RadioButton
     private lateinit var radio3: RadioButton
     private lateinit var radio4: RadioButton
+    private lateinit var question: TextView
+    private lateinit var topicRepository: TopicRepository
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_science_question)
+
+        topicRepository = (application as QuizApp).topicRepository
+        val topic = (topicRepository.getTopics())[1]
 
         subButton = findViewById(R.id.subButton)
         radio1 = findViewById(R.id.radioButton1)
         radio2 = findViewById(R.id.radioButton2)
         radio3 = findViewById(R.id.radioButton3)
         radio4 = findViewById(R.id.radioButton4)
+        question = findViewById(R.id.text3)
+
+        question.text = topic.questions[0].question
+        radio1.text = topic.questions[0].option1
+        radio2.text = topic.questions[0].option2
+        radio3.text = topic.questions[0].option3
+        radio4.text = topic.questions[0].option4
 
         subButton.setOnClickListener() {
             val selAnswer = getSelectedAnswer().toString()

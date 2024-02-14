@@ -7,24 +7,28 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 
 class MainActivity : AppCompatActivity() {
-    val values = listOf("Math", "Science", "Marvel Super Heroes")
-    lateinit var lstItems : ListView
+    private lateinit var lstItems : ListView
+    private lateinit var topicRepository: TopicRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         lstItems = findViewById(R.id.lstItems)
+        topicRepository = (application as QuizApp).topicRepository
+        val titles = topicRepository.getTopics().map { it.title }
+
         val adapter = ArrayAdapter<String>(this,
-            android.R.layout.simple_list_item_1, android.R.id.text1, values)
+            android.R.layout.simple_list_item_1, android.R.id.text1, titles)
         lstItems.adapter = adapter
 
         lstItems.setOnItemClickListener { _, _, position, _ ->
-            val selectedItem = values[position]
+            val selectedItem = titles[position]
+
             when (selectedItem) {
                 "Math" -> startMathOverview()
                 "Science" -> startScienceOverview()
-                "Marvel Super Heroes" -> startMarvelOverview()
+                "Marvel Superheros" -> startMarvelOverview()
             }
         }
     }
