@@ -17,10 +17,10 @@ class scienceOverview : AppCompatActivity() {
         val topics = topicRepository.getTopics()
 
         val overviewTitle: TextView = findViewById(R.id.text1)
-        overviewTitle.text = topics[1].shortDesc
+        overviewTitle.text = topics[1].title
 
         val desc: TextView = findViewById(R.id.text2)
-        desc.text = topics[1].longDesc
+        desc.text = topics[1].desc
 
         val begin: Button = findViewById(R.id.button2)
 

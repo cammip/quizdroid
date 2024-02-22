@@ -31,10 +31,10 @@ class scienceQuestion : AppCompatActivity() {
         question = findViewById(R.id.text3)
 
         question.text = topic.questions[0].question
-        radio1.text = topic.questions[0].option1
-        radio2.text = topic.questions[0].option2
-        radio3.text = topic.questions[0].option3
-        radio4.text = topic.questions[0].option4
+        radio1.text = topic.questions[0].answers[0]
+        radio2.text = topic.questions[0].answers[1]
+        radio3.text = topic.questions[0].answers[2]
+        radio4.text = topic.questions[0].answers[3]
 
         subButton.setOnClickListener() {
             val selAnswer = getSelectedAnswer().toString()

@@ -14,7 +14,7 @@ class marvelAnswer : AppCompatActivity() {
         setContentView(R.layout.activity_marvel_answer)
         topicRepository = (application as QuizApp).topicRepository
         val topic = (topicRepository.getTopics())[2].questions[0]
-        val questions = listOf(topic.option1, topic.option2, topic.option3, topic.option4)
+        val questions = topic.answers
 
         val btn: Button = findViewById(R.id.finish)
 

@@ -17,10 +17,10 @@ class marvelOverview : AppCompatActivity() {
         val topics = topicRepository.getTopics()
 
         val overviewTitle: TextView = findViewById(R.id.text1)
-        overviewTitle.text = topics[2].shortDesc
+        overviewTitle.text = topics[2].title
 
         val desc: TextView = findViewById(R.id.text2)
-        desc.text = topics[2].longDesc
+        desc.text = topics[2].desc
 
         val begin: Button = findViewById(R.id.button2)
 

@@ -31,10 +31,10 @@ class marvelQuestion : AppCompatActivity() {
         question = findViewById(R.id.text3)
 
         question.text = topic.question
-        radio1.text = topic.option1
-        radio2.text = topic.option2
-        radio3.text = topic.option3
-        radio4.text = topic.option4
+        radio1.text = topic.answers[0]
+        radio2.text = topic.answers[1]
+        radio3.text = topic.answers[2]
+        radio4.text = topic.answers[3]
 
         subButton.setOnClickListener() {
             val selAnswer = getSelectedAnswer().toString()

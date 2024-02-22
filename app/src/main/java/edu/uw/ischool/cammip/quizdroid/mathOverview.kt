@@ -18,10 +18,10 @@ class mathOverview : AppCompatActivity() {
         val topics = topicRepository.getTopics()
 
         val overviewTitle: TextView = findViewById(R.id.text1)
-        overviewTitle.text = topics[0].shortDesc
+        overviewTitle.text = topics[0].title
 
         val desc: TextView = findViewById(R.id.text2)
-        desc.text = topics[0].longDesc
+        desc.text = topics[0].desc
 
         val beginButton: Button = findViewById(R.id.beginButton)
 
