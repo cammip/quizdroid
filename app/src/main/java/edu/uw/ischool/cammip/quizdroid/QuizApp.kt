@@ -2,6 +2,12 @@ package edu.uw.ischool.cammip.quizdroid
 import android.app.Application
 import android.util.Log
 import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.net.NetworkRequest
+import android.os.Build
+import android.provider.Settings
+import androidx.core.content.ContextCompat.getSystemService
 import org.json.JSONArray
 import java.io.IOException
 
@@ -22,6 +28,7 @@ interface TopicRepository {
 }
 
 class useTopicRepo(private val context: Context): TopicRepository {
+
     override fun getTopics(): List<Topic> {
         val topics = mutableListOf<Topic>()
 
